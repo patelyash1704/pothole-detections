@@ -1,0 +1,28 @@
+<!-- realtime_classification.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Pothole Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <section class='analyze-section' id='analyze'>
+        <div class="container">
+            <h2 class='title'>Detect realtime pothole</h2>
+            <form action="{{ url_for('start_detection', detection_type='realtime') }}" method="post" class="form">
+                <button class='btn' type='submit' value="Start Detection">Start Detection</button>
+            </form>
+            <img id="video_feed" src="{{ url_for('video_feed') }}">
+            <form action="{{ url_for('stop_detection') }}" method="get" class="form">
+                <button class='btn' type='submit' value="Stop Detection">Stop Detection</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <section class='hero-section' id='home'>
+        <div class='container'>
+            <div class="hero-content">
+                <div class="text-2">Welcome to Pothole Classification</div><br>
+                <form action="/greet" method="post" class="hero-form">
+                    <h2>
+                        <label for="choice">Choose Classification Type:</label>
+                    </h2>
+                    <div class="input-div">
+                        <div class="inputs">
+                            <input type="radio" id="image" name="choice" value="image">
+                            <label for="image">Image Classification</label><br>
+                        </div>
+                        <div class="inputs">
+                            <input type="radio" id="realtime" name="choice" value="realtime">
+                            <label for="realtime">Real-time Classification</label><br><br>
+                        </div>
+                    </div>
+                    <button class='btn' type="submit" value="Submit">Detect</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+

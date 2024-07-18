@@ -1,0 +1,36 @@
+<!-- image_classification.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <section class='analyze-section' id='analyze'>
+        <div class="container">
+            <h2 class='title'>Detect pothole with image</h2>
+            <form class='form' action="{{ url_for('image_classification') }}" method="post"
+                enctype="multipart/form-data">
+                <div class="input-container">
+                    <label for="images" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Drop image file here</span>
+                        or
+                        <input type="file" accept="image/*" id="images" name="file" required />
+                    </label>
+                </div>
+                <button class='btn' type='submit' value="Upload and Detect">Detect</button>
+            </form>
+            <div class="result-div">
+                {% if result %}
+                <h2>Result: {{ result }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
